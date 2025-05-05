@@ -2,8 +2,8 @@ import numpy as np
 from sklearn.neural_network import MLPClassifier
 
 # Number of iterations for GAN
-ITER = 1000
-RUNS = 100
+ITER = 2000
+RUNS = 40
 
 # True probability for heads (parameter we want GAN to estimate)
 true_p_heads = 0.7
@@ -20,7 +20,7 @@ def compute_gradient(p, p1, p2, q11, q12, q21, q22):
     )
 
 # Run GAN estimation multiple times and append to text file
-with open("gan_estimates.txt", "a") as f:
+with open(f"gan_estimates{ITER}.txt", "a") as f:
     for run in range(RUNS):
         real_data = simulate_coin_toss(true_p_heads)
         estimated_p_heads = np.random.uniform(0.3, 0.6)  # random starting point

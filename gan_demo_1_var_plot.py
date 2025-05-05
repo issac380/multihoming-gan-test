@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 
 true_p_heads = 0.7
 
-with open("gan_estimates.txt", "r") as f:
+ITER = 2000
+
+with open(f"gan_estimates{ITER}.txt", "r") as f:
     estimates = [float(line.strip()) for line in f if line.strip()]
 
 plt.hist(
