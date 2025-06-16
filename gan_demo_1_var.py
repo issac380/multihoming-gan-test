@@ -2,8 +2,8 @@ import numpy as np
 from sklearn.neural_network import MLPClassifier
 
 # Number of iterations for GAN
-ITER = 2000
-RUNS = 40
+ITER = 500
+RUNS = 10
 
 # True probability for heads (parameter we want GAN to estimate)
 true_p_heads = 0.7
